@@ -1,0 +1,60 @@
+<ion-view view-title="Puanmatik">
+  <ion-content>
+
+    <!--Bilgi kartı-->
+    <div class="card">
+      <div class="item item-text-wrap royal">
+       Lütfen netlerinizi giriniz.
+      </div>
+    </div>
+
+    <div class="list">
+      <div class="item range range-positive royal">
+        TUR
+        <input type="range" ng-model="tur" min="0" max="40" ng-init="tur=0">
+        {{tur}} net
+      </div>
+    </div>
+
+    <div class="list">
+      <div class="item range range-positive royal">
+        MAT
+        <input type="range" ng-model="mat" min="0" max="40" ng-init="mat=0">
+        {{mat}} net
+      </div>
+    </div>
+
+    <div class="list">
+      <div class="item range range-positive royal">
+        SOS
+        <input type="range" ng-model="sos" min="0" max="20" ng-init="sos=0">
+        {{sos}} net
+      </div>
+    </div>
+
+    <div class="list">
+      <div class="item range range-positive royal">
+        FEN
+        <input type="range" ng-model="fen" min="0" max="20" ng-init="fen=0">
+        {{fen}} net
+      </div>
+    </div>
+
+    <div class="list">
+      <div class="item range range-positive royal">
+        Diploma Notu
+        <input type="range" ng-model="dip" min="0" max="100" ng-init="dip=0">
+        {{dip}}
+      </div>
+    </div>
+
+    <!--Puan kartı-->
+    <div class="card">
+        <div class="item item-text-wrap royal">
+          <h2 class="result royal">
+            TYT puanınız: {{100+tur*3.3+mat*3.3+sos*3.4+fen*3.4+dip*0.6}} puan
+          </h2>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
