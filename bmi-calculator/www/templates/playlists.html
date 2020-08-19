@@ -1,0 +1,32 @@
+<ion-view view-title="Sisko App">
+  <ion-content>
+    <ion-list>
+
+    <!--Bilgi kartı-->
+    <div class="card">
+      <div class="item item-text-wrap balanced">
+       Lütfen gerekli bilgileri giriniz.
+      </div>
+    </div>
+
+    <div class="list list-inset">
+      <label class="item item-input">
+        <ion-label>Boy:</ion-label>
+        <input type="number" step="0.01" placeholder="(cm)" ng-model="boy">
+      </label>
+      <label class="item item-input">
+        <ion-label>Kilo:</ion-label>
+        <input type="number" placeholder="(kg)" ng-model="kilo">
+      </label>
+    </div>
+
+    <!--Hesaplama kartı-->
+    <div class="card">
+      <div class="item item-text-wrap">
+       <h2>Vücut kitle indeksiniz: {{kilo/((boy/100)*(boy/100))}}</h2>
+      </div>
+    </div>
+
+    </ion-list>
+  </ion-content>
+</ion-view>
