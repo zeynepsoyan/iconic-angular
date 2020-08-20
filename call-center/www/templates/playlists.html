@@ -1,0 +1,42 @@
+<ion-view view-title="Call Center">
+  <ion-content>
+    
+    <!--Search box-->
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Nereyi aramıştınız?" ng-model="keyword">
+      </label>
+    </div>
+
+    <!--Result card-->
+    <div class="card" ng-if="keyword && result.length>0" >
+      <div class="item item-text-wrap">
+        <b>"{{keyword}}" kelsimesine ait {{result.length}} sonuç bulundu.</b>
+      </div>
+    </div>
+
+    <!--Result no found card-->
+    <div class="card" ng-if="keyword && result.length==0" >
+      <div class="item item-text-wrap">
+        "{{keyword}}" kelimesine ait sonuç bulunamadı.
+      </div>
+    </div>
+
+    <div class="list">
+      <a class="item item-avatar" ng-repeat="company in companies | filter:keyword as result" href="#/app/playlists/{{companies.id}}">
+        <img src={{company.logo}}>
+        <h2>{{company.title}}</h2>
+        <p>{{company.category}}</p>
+      </a>
+    </div>
+
+
+
+    <ion-list>
+      <ion-item >
+        
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
