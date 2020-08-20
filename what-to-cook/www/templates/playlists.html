@@ -1,8 +1,41 @@
-<ion-view view-title="Playlists">
+<ion-view view-title="Ne Pişirsek?">
   <ion-content>
+    
+    <!--Search box-->
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="İsim veya kategori giriniz" ng-model="keyword">
+      </label>
+    </div>
+
+    <!--Result card-->
+    <div class="card" ng-if="keyword && result.length>0" >
+      <div class="item item-text-wrap">
+        "{{keyword}}" kelimesine ait {{result.length}} sonuç bulundu.
+      </div>
+    </div>
+
+    <!--Result no found card-->
+    <div class="card" ng-if="keyword && result.length==0" >
+      <div class="item item-text-wrap">
+        <b>"{{keyword}}" kelimesine ait sonuç bulunamadı.</b>
+      </div>
+    </div>
+
+    <div class="list">
+      <a class="item item-thumbnail-left" ng-repeat="recipe in recipes | filter:keyword as result" href="#/app/playlists/{{companies.id}}">
+        <img src={{recipe.logo}}>
+        <h2>{{recipe.title}}</h2>
+        <p>{{recipe.category}}</p>
+      </a>
+    </div>
+
+
+
     <ion-list>
-      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
-        {{playlist.title}}
+      <ion-item >
+        
       </ion-item>
     </ion-list>
   </ion-content>
