@@ -1,1 +1,15 @@
 /* Empty. Add your own CSS if you like */
+
+.badge-container {
+    border-color: #e42112;
+    background-color: #ef473a;
+    color: #fff; 
+    padding: 3px 8px;
+    min-width: 10px;
+    border-radius: 10px;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+}
